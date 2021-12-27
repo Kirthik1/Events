@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "285875106629",
+    "project_id": "gdscevents",
+    "storage_bucket": "gdscevents.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285875106629:android:d3e65951fbe1f69434042c",
+        "android_client_info": {
+          "package_name": "com.skct.events"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285875106629-flah80g8mj85jba9hlvhvv75rkn3c2ba.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPu-RI1p-kSk6TULNRjJ7vk1I5gcMq38g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285875106629-flah80g8mj85jba9hlvhvv75rkn3c2ba.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

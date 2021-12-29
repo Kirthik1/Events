@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -23,7 +24,10 @@ class SplashActivity : AppCompatActivity(R.layout.splash_screen) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        val activityLaunch = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(it.data)
+            handleResult(task)
+        }
         // Configure Google Sign In inside onCreate method
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -36,21 +40,15 @@ class SplashActivity : AppCompatActivity(R.layout.splash_screen) {
 
         val btnLogin: Button = findViewById(R.id.btnLogin)
         btnLogin.setOnClickListener { view: View? ->
-            signInGoogle()
+            signInGoogle(activityLaunch)
         }
 
     }
 
-    private fun signInGoogle() {
+    private fun signInGoogle(launcher: ActivityResultLauncher<Intent>) {
 
         val signInIntent: Intent = mGoogleSignInClient.signInIntent
-        
-        val activityLaunch = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
-            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(it.data)
-            handleResult(task)
-        }
-
-        activityLaunch.launch(signInIntent)
+        launcher.launch(signInIntent)
     }
 
 

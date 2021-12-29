@@ -1,16 +1,14 @@
 package com.skct.events
 
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -19,19 +17,15 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.skct.events.activity1 as activity1
+import com.skct.events.activity1
 
-class MainActivity : AppCompatActivity() {
+class SplashActivity : AppCompatActivity(R.layout.splash_screen) {
     lateinit var mGoogleSignInClient: GoogleSignInClient
     val Req_Code:Int=123
     var firebaseAuth= FirebaseAuth.getInstance()
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.splash_screen)
 
         // Configure Google Sign In inside onCreate method
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -43,7 +37,7 @@ class MainActivity : AppCompatActivity() {
       // initialize the firebaseAuth variable
         firebaseAuth= FirebaseAuth.getInstance()
 
-        var loginbutton: Button = findViewById(R.id.loginbt)
+        val loginbutton: Button = findViewById(R.id.btnLogin)
         loginbutton.setOnClickListener{ view: View? ->
             signInGoogle()
         }

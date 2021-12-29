@@ -32,7 +32,7 @@ class activity1 : AppCompatActivity() {
 
         logoutbutton.setOnClickListener {
             mGoogleSignInClient.signOut().addOnCompleteListener {
-                val intent= Intent(this, MainActivity::class.java)
+                val intent= Intent(this, SplashActivity::class.java)
                 startActivity(intent)
                 finish()
             }

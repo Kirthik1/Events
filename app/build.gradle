@@ -56,4 +56,10 @@ dependencies {
     // Also declare the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
 
+    // for adding recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+
+    // for adding cardview
+    implementation 'androidx.cardview:cardview:1.0.0'
+
 }

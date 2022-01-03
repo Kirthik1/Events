@@ -72,7 +72,7 @@ class SplashActivity : AppCompatActivity(R.layout.splash_screen) {
             if (task.isSuccessful) {
                 PreferenceUtils.setEmail(this, account.email.toString())
                 PreferenceUtils.setUsername(this, account.displayName.toString())
-                val intent = Intent(this, add_event_activity::class.java)
+                val intent = Intent(this, AddEventActivity::class.java)
                 startActivity(intent)
                 finish()
             }
@@ -82,7 +82,7 @@ class SplashActivity : AppCompatActivity(R.layout.splash_screen) {
     override fun onStart() {
         super.onStart()
         if (GoogleSignIn.getLastSignedInAccount(this) != null) {
-            startActivity(Intent(this, Recyclerview::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
     }

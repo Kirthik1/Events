@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".add_event_activity">
+    tools:context=".AddEventActivity">
 
     <EditText
         android:id="@+id/event_name_input"
         android:layout_width="301dp"
         android:layout_height="41dp"
+        android:autofillHints="Untitled Event"
         android:hint="Enter Event's Name"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075" />
+        app:layout_constraintVertical_bias="0.049" />
 
     <DatePicker
         android:id="@+id/date_Picker"
@@ -28,22 +29,10 @@
         android:datePickerMode="spinner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/event_name_input" />
-
-    <!-- Cursor Position -->
-    android:maxLines="10" <!-- Maximum Lines -->
-    android:layout_height="wrap_content" <!-- Height determined by content -->
-    android:layout_width="match_parent" <!-- Fill entire width -->
-    android:scrollbars="vertical" <!-- Vertical Scroll Bar --><![CDATA[
-    />
-
-
-
-
-
-    ]]>
+        app:layout_constraintTop_toBottomOf="@+id/event_name_input"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:layout_width="293dp"
@@ -64,7 +53,7 @@
         android:id="@+id/button"
         android:layout_width="74dp"
         android:layout_height="49dp"
-        android:text="Button"
+        android:text="Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/date_Picker"
         app:layout_constraintHorizontal_bias="0.421"
@@ -100,16 +89,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.572" />
 
-
-    <!--<TimePicker
-        android:id="@+id/timePicker1"
-        android:layout_width="265dp"
-        android:layout_height="360dp"
-        android:layout_centerHorizontal="true"
-        android:timePickerMode="clock"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="287dp" />
-     -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

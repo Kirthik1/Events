@@ -1,13 +1,16 @@
 package com.skct.events
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter(private val context: Context, private val mList: List<EventData>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -22,14 +25,18 @@ class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val ItemsViewModel = mList[position]
+        val data = mList[position]
 
         // sets the image to the imageview from our itemHolder class
-        holder.imageView.setImageResource(ItemsViewModel.image)
+//            holder.imageView.setImageResource(data.image)
 
         // sets the text to the textview from our itemHolder class
-        holder.textView.text = ItemsViewModel.text
+        holder.textView.text = data.name
 
+        holder.cardMain.setOnClickListener {
+            val intent = Intent(context, EventDetails::class.java)
+            context.startActivity(intent)
+        }
     }
 
     // return the number of the items in the list
@@ -41,7 +48,7 @@ class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val imageView: ImageView = itemView.findViewById(R.id.item_image)
         val textView: TextView = itemView.findViewById(R.id.item_name)
-
+        val cardMain = itemView.findViewById<CardView>(R.id.crdMain)
     }
     
 }

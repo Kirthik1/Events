@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Events">
-        <activity android:name=".EventDetails"></activity>
-        <activity android:name=".add_event_activity" />
+        <activity android:name=".EventDetails"/>
+        <activity android:name=".AddEventActivity" />
         <activity android:name=".activity1" />
-        <activity android:name=".Recyclerview" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

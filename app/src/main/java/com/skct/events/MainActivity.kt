@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         recyclerview.adapter = adapter
 
 
+
         findViewById<FloatingActionButton>(R.id.fab_add).setOnClickListener {
             val intent = Intent(this, AddEventActivity::class.java)
             startActivity(intent)

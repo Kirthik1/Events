@@ -1,9 +1,11 @@
 package com.skct.events
 
-import java.util.*
+import android.text.Editable
 
 data class EventData(
-    val name: String,
-    val description: String,
-    val date: Date
-)
+        val name: Editable,
+        val description: Editable,
+        val venueData: Editable
+
+
+        )

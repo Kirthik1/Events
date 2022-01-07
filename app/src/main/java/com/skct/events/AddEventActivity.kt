@@ -87,12 +87,11 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
 
     /*fun pushToFirestore(data: EventData): Boolean{
     TODO("kanna !!!!! please do this kanna ....
-     1] Get the data from @eventPush this data to firestore
+     1] Get the data from @addeventdata this data to firestore, and create a card in main activity(recycler view) when he clicks save
      2] Return this data from firestore
-     3] create a new card when the he fills the details and clicks save
      4] displaying the detials in card @Main
      5] when we click the card display the particular details of the card @EventDetails
-     6]  ")
+     6]   )
 
          var db = Firebase.firestore
          db.collection("events")

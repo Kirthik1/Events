@@ -78,6 +78,7 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         myMinute = minute
         textView.text = "Date : " + myDay + "|" + myMonth + "|"+ myYear + "|" + "\n"+ "Hour: " + myHour + ":" + myMinute
     }
+    //hello bois
 
 
     /*    fun validate(): Boolean{

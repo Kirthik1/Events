@@ -60,6 +60,13 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
                 DatePickerDialog(this@AddEventActivity, this@AddEventActivity, year, month, day)
             datePickerDialog.show()
         }
+
+
+        // Calling functions basic functions
+        /*var validateVariable = validate()
+        if(validateVariable){
+            pushToFirestore(EventData(eventName.text,eventDescription.text,eventCoordinators.text,))
+        }*/
     }
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
@@ -77,8 +84,7 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         myHour = hourOfDay
         myMinute = minute
-        textView.text =
-            "Year: " + myYear + "\n" + "Month: " + myMonth + "\n" + "Day: " + myDay + "\n" + "Hour: " + myHour + "\n" + "Minute: " + myMinute
+        textView.text = "Year: " + myYear + "\n" + "Month: " + myMonth + "\n" + "Day: " + myDay + "\n" + "Hour: " + myHour + "\n" + "Minute: " + myMinute
     }
 
 
@@ -86,8 +92,22 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         if (eventName.text.toString().isEmpty()) {
             return false
         }
+        if (eventDescription.text.toString().isEmpty()) {
+            return false
+        }
+        if (eventVenue.text.toString().isEmpty()) {
+            return false
+        }
+        if (eventCoordinators.text.toString().isEmpty()) {
+            return false
+        }
         return true
     }
+
+
+
+
+
 
     fun pushToFirestore(data: EventData): Boolean {
         val db = Firebase.firestore
@@ -99,6 +119,9 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
             }
         return false
     }
+
+
+
 
 }
 

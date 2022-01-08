@@ -35,6 +35,7 @@ class CustomAdapter(private val context: Context, private val mList: List<EventD
 
         holder.cardMain.setOnClickListener {
             val intent = Intent(context, EventDetails::class.java)
+            intent.putExtra("data", data)
             context.startActivity(intent)
         }
     }

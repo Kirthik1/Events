@@ -7,5 +7,6 @@ class EventDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.event_details)
+        val eventData: EventData? = intent.extras?.getParcelable("data")
     }
 }

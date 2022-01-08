@@ -2,12 +2,16 @@ package com.skct.events
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
+    private val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +27,13 @@ class MainActivity : AppCompatActivity() {
         // ArrayList of class ItemsViewModel
         val data = ArrayList<EventData>()
 
-//        TODO("Fetch from firestore")
+        val db = Firebase.firestore
+        db.collection("event")
+            .document("stROnlu7XlPHkab1uYgC")
+            .get()
+            .addOnSuccessListener {
+                Log.d(TAG, "onCreate: ${it.data}")
+            }
 
         // This loop will create 20 Views containing
         // the image with the count of view

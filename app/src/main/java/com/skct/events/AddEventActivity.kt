@@ -8,10 +8,12 @@ import android.text.format.DateFormat.is24HourFormat
 import android.widget.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.gson.Gson
 import java.text.DateFormat
 import java.util.*
 
-class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
+class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
+    TimePickerDialog.OnTimeSetListener {
     // Date and Time Picker Variables
     lateinit var textView: TextView
     lateinit var button: Button
@@ -32,7 +34,6 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
     private lateinit var eventDescription: EditText
     private lateinit var eventVenue: EditText
     private lateinit var eventCoordinators: EditText
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,10 +57,11 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
             month = calendar.get(Calendar.MONTH)
             year = calendar.get(Calendar.YEAR)
             val datePickerDialog =
-                    DatePickerDialog(this@AddEventActivity, this@AddEventActivity, year, month,day)
+                DatePickerDialog(this@AddEventActivity, this@AddEventActivity, year, month, day)
             datePickerDialog.show()
         }
     }
+
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         myDay = day
         myYear = year
@@ -67,32 +69,35 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         val calendar: Calendar = Calendar.getInstance()
         hour = calendar.get(Calendar.HOUR)
         minute = calendar.get(Calendar.MINUTE)
-        val timePickerDialog = TimePickerDialog(this@AddEventActivity, this@AddEventActivity, hour, minute,true)
+        val timePickerDialog =
+            TimePickerDialog(this@AddEventActivity, this@AddEventActivity, hour, minute, true)
         timePickerDialog.show()
     }
+
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         myHour = hourOfDay
         myMinute = minute
-        textView.text = "Year: " + myYear + "\n" + "Month: " + myMonth + "\n" + "Day: " + myDay + "\n" + "Hour: " + myHour + "\n" + "Minute: " + myMinute
+        textView.text =
+            "Year: " + myYear + "\n" + "Month: " + myMonth + "\n" + "Day: " + myDay + "\n" + "Hour: " + myHour + "\n" + "Minute: " + myMinute
     }
 
 
-  fun validate(): Boolean {
-      if (eventName.text.toString().isEmpty()){
-          return false
-      }
-      return true
-  }
+    fun validate(): Boolean {
+        if (eventName.text.toString().isEmpty()) {
+            return false
+        }
+        return true
+    }
 
-fun pushToFirestore(data: EventData): Boolean{
-         val db = Firebase.firestore
-         db.collection("events")
-             .document("stROnlu7XlPHkab1uYgC")
-             .set(data)
-             .addOnSuccessListener {
+    fun pushToFirestore(data: EventData): Boolean {
+        val db = Firebase.firestore
+        db.collection("events")
+            .document("stROnlu7XlPHkab1uYgC")
+            .set(Gson().toJson(data))
+            .addOnSuccessListener {
 
-             }
-             return false
+            }
+        return false
     }
 
 }

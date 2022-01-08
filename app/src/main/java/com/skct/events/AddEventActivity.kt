@@ -108,10 +108,12 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         myHour = hourOfDay
         myMinute = minute
-        textView.text =
-            "Year: $myYear\nMonth: $myMonth\nDay: $myDay\nHour: $myHour\nMinute: $myMinute"
+
         eventDate = "$myDay/$myMonth/$myYear"
         eventTime = "$myHour:$myMinute"
+
+        textView.text =
+            "Selected Date : $eventDate \n Selected Time : $eventTime"
     }
 
 

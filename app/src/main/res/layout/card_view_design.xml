@@ -49,7 +49,7 @@
                 android:layout_height="31dp"
                 android:layout_marginLeft="15dp"
                 android:lineSpacingExtra="20sp"
-                android:text="Date :"
+                android:text="Event Date :"
                 android:textSize="20sp" />
 
             <TextView
@@ -73,7 +73,7 @@
                 android:layout_height="27dp"
                 android:layout_marginLeft="15dp"
                 android:lineSpacingExtra="20sp"
-                android:text="Time :"
+                android:text="Event Time :"
                 android:textSize="20sp" />
 
             <TextView

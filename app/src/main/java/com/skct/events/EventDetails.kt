@@ -3,6 +3,7 @@ package com.skct.events
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -23,6 +24,11 @@ class EventDetails : AppCompatActivity() {
         val tv4: TextView = findViewById(R.id.textView14)
         val tv5: TextView = findViewById(R.id.textView12)
         val tv6: TextView = findViewById(R.id.textView16)
+
+
+        // making the link clickable
+
+
 
         if (eventData != null) {
             tv1.text = eventData.name

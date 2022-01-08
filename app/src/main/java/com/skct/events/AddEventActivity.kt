@@ -43,6 +43,7 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         eventVenue = findViewById(R.id.event_venue_input)
         eventCoordinators = findViewById(R.id.event_coordinator)
 
+
         //initialization of date picker variable
 
         textView = findViewById(R.id.textView)

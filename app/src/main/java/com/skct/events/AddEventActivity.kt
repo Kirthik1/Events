@@ -126,6 +126,7 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         return true
     }
 
+    //
     fun pushToFirestore(data: EventData): Boolean {
         val db = Firebase.firestore
         return  db.collection("events")

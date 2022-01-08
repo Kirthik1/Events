@@ -34,6 +34,9 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
     private lateinit var eventDescription: EditText
     private lateinit var eventVenue: EditText
     private lateinit var eventCoordinators: EditText
+    private lateinit var eventDate: String
+    private lateinit var eventTime: String
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +49,9 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         eventVenue = findViewById(R.id.event_venue_input)
         eventCoordinators = findViewById(R.id.event_coordinator)
 
+        // initialization of add event button
+        var addButton = findViewById<Button>(R.id.addEventButton)
+
 
         //initialization of date picker variable
 
@@ -57,16 +63,23 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
             month = calendar.get(Calendar.MONTH)
             year = calendar.get(Calendar.YEAR)
             val datePickerDialog =
-                DatePickerDialog(this@AddEventActivity, this@AddEventActivity, year, month, day)
+                    DatePickerDialog(this@AddEventActivity, this@AddEventActivity, year, month, day)
             datePickerDialog.show()
         }
 
 
-        // Calling functions basic functions
-        /*var validateVariable = validate()
-        if(validateVariable){
-            pushToFirestore(EventData(eventName.text,eventDescription.text,eventCoordinators.text,))
-        }*/
+        // Calling functions basic functions on the click of ADD Button
+        addButton.setOnClickListener(){
+        var validateVariable = validate()
+        if (validateVariable) {
+            pushToFirestore(EventData(eventName.text.toString(), eventDescription.text.toString(), eventVenue.text.toString(), eventCoordinators.text.toString(), eventDate, eventTime))
+        } else {
+            val message: String = "Please enter all the details"
+            var toast = Toast.makeText(this, message, Toast.LENGTH_SHORT)
+            toast.show()
+
+        }
+    }
     }
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
@@ -85,6 +98,8 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         myHour = hourOfDay
         myMinute = minute
         textView.text = "Year: " + myYear + "\n" + "Month: " + myMonth + "\n" + "Day: " + myDay + "\n" + "Hour: " + myHour + "\n" + "Minute: " + myMinute
+        eventDate = myDay.toString() + "/" +myMonth.toString() +"/" + myYear.toString()
+        eventTime = myHour.toString() + ":" + myMinute.toString()
     }
 
 

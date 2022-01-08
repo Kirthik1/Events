@@ -17,12 +17,14 @@ data class EventData(
     @SerializedName("venue_data")
     val venueData: String,
 
+    @SerializedName("coordinator_name")
+    val coordinatorsName: String,
+
     @SerializedName("event_date")
-    val eventDate: Date,
+    val eventDate: String,
 
     @SerializedName("event_time")
-    val eventTime: Time,
+    val eventTime: String
 
-    @SerializedName("coordinator_name")
-    val coordinatorsName: String
+
 ) : Parcelable

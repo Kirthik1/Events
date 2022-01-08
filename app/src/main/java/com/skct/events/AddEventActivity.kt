@@ -116,13 +116,10 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
 
     fun pushToFirestore(data: EventData): Boolean {
         val db = Firebase.firestore
-        db.collection("events")
+        return  db.collection("events")
             .document("stROnlu7XlPHkab1uYgC")
-            .set(Gson().toJson(data))
-            .addOnSuccessListener {
-
-            }
-        return false
+            .set(mapOf<String, String>("000" to Gson().toJson(data)))
+            .isSuccessful
     }
 
 }

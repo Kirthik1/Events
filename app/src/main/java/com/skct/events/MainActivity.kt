@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             .document("stROnlu7XlPHkab1uYgC")
             .get()
             .addOnSuccessListener {
-                Log.d(TAG, "onCreate: ${it.data}")
+                Log.d(TAG, "onCreate: ${it.data?.values?.first()}")
             }
 
         // This loop will create 20 Views containing

@@ -1,5 +1,6 @@
 package com.skct.events
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -94,12 +95,14 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         timePickerDialog.show()
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         myHour = hourOfDay
         myMinute = minute
-        textView.text = "Year: " + myYear + "\n" + "Month: " + myMonth + "\n" + "Day: " + myDay + "\n" + "Hour: " + myHour + "\n" + "Minute: " + myMinute
-        eventDate = myDay.toString() + "/" +myMonth.toString() +"/" + myYear.toString()
-        eventTime = myHour.toString() + ":" + myMinute.toString()
+        textView.text =
+            "Year: $myYear\nMonth: $myMonth\nDay: $myDay\nHour: $myHour\nMinute: $myMinute"
+        eventDate = "$myDay/$myMonth/$myYear"
+        eventTime = "$myHour:$myMinute"
     }
 
 
@@ -107,23 +110,9 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         if (eventName.text.toString().isEmpty()) {
             return false
         }
-        if (eventDescription.text.toString().isEmpty()) {
-            return false
-        }
-        if (eventVenue.text.toString().isEmpty()) {
-            return false
-        }
-        if (eventCoordinators.text.toString().isEmpty()) {
-            return false
-        }
         //change
         return true
     }
-
-
-
-
-
 
     fun pushToFirestore(data: EventData): Boolean {
         val db = Firebase.firestore
@@ -135,9 +124,6 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
             }
         return false
     }
-
-
-
 
 }
 

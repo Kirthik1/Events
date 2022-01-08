@@ -82,7 +82,7 @@ class SplashActivity : AppCompatActivity(R.layout.splash_screen) {
     override fun onStart() {
         super.onStart()
         if (GoogleSignIn.getLastSignedInAccount(this) != null) {
-            startActivity(Intent(this, AddEventActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
     }

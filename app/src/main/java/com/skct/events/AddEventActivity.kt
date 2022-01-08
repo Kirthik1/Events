@@ -118,8 +118,18 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         val db = Firebase.firestore
         return  db.collection("events")
             .document("stROnlu7XlPHkab1uYgC")
-            .set(mapOf<String, String>("000" to Gson().toJson(data)))
+            .set(mapOf<String, String>(generateRandomString() to Gson().toJson(data)))
             .isSuccessful
+    }
+
+    private fun generateRandomString() : String{
+        val chars = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        val randomString = (1..7)
+            .map { i -> kotlin.random.Random.nextInt(0, chars.length) }
+            .map(chars::get)
+            .joinToString("")
+
+        return  randomString
     }
 
 }

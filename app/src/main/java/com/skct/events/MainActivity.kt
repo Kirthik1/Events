@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
@@ -27,29 +28,28 @@ class MainActivity : AppCompatActivity() {
         // ArrayList of class ItemsViewModel
         val data = ArrayList<EventData>()
 
-        val db = Firebase.firestore
-        db.collection("event")
-            .document("stROnlu7XlPHkab1uYgC")
-            .get()
-            .addOnSuccessListener {
-                Log.d(TAG, "onCreate: ${it.data?.values?.first()}")
-            }
-
-        // This loop will create 20 Views containing
-        // the image with the count of view
-//        for (i in 1..20) {
-////            data.add(EventData(R.drawable.skct_logo, "Item $i"))
-//        }
-
         // This will pass the ArrayList to our Adapter
         val adapter = CustomAdapter(this, data)
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
 
+        val db = Firebase.firestore
+        db.collection("events")
+            .document("stROnlu7XlPHkab1uYgC")
+            .addSnapshotListener { value, error ->
+                data.clear()
+                value?.data?.values?.forEach { _event ->
+                    data.add(Gson().fromJson(_event.toString(), EventData::class.java))
+                    adapter.notifyDataSetChanged()
+                }
+
+            }
 
 
-        findViewById<FloatingActionButton>(R.id.fab_add).setOnClickListener {
+
+        findViewById<FloatingActionButton>(R.id.fab_add).setOnClickListener()
+        {
             val intent = Intent(this, AddEventActivity::class.java)
             startActivity(intent)
         }

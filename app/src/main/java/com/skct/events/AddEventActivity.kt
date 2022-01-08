@@ -77,34 +77,12 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
     }
 
 
-    /*    fun validate(): Boolean{
-        TODO("return true if validation succeed")
-        val event_name = findViewById<EditText>(R.id.event_name_input)
-        val txt = event_name.text
-        val text:String = txt.toString()
-
-        val dataclss = EventData(text)
-
-
-    }*/
-
-    /*fun pushToFirestore(data: EventData): Boolean{
-    TODO("kanna !!!!! please do this kanna ....
-     1] Get the data from @addeventdata this data to firestore, and create a card in main activity(recycler view) when he clicks save
-     2] Return this data from firestore
-     4] displaying the detials in card @Main
-     5] when we click the card display the particular details of the card @EventDetails
-     6]   )
-
-         var db = Firebase.firestore
-         db.collection("events")
-             .document("stROnlu7XlPHkab1uYgC")
-             .set()
-             .addSnapshotListener { value, error ->
-                 return@addSnapshotListener
-             }
-             return false
-    }*/
+  fun validate(): Boolean {
+      if (eventName.text.toString().isEmpty()){
+          return false
+      }
+      return true
+  }
 
 fun pushToFirestore(data: EventData): Boolean{
          val db = Firebase.firestore

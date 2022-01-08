@@ -101,6 +101,7 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         if (eventCoordinators.text.toString().isEmpty()) {
             return false
         }
+        //change
         return true
     }
 

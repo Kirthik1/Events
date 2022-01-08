@@ -38,6 +38,7 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
     private lateinit var eventCoordinators: EditText
     private lateinit var eventDate: String
     private lateinit var eventTime: String
+    private lateinit var eventFieldId: String
 
 
 
@@ -53,6 +54,11 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
 
         // initialization of add event button
         var addButton = findViewById<Button>(R.id.addEventButton)
+
+
+        // Giving Events ID
+
+        eventFieldId = generateRandomString()
 
 
         //initialization of date picker variable
@@ -74,7 +80,7 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         addButton.setOnClickListener(){
         var validateVariable = validate()
         if (validateVariable) {
-            pushToFirestore(EventData(eventName.text.toString(), eventDescription.text.toString(), eventVenue.text.toString(), eventCoordinators.text.toString(), eventDate, eventTime))
+            pushToFirestore(EventData(eventName.text.toString(), eventDescription.text.toString(), eventVenue.text.toString(), eventCoordinators.text.toString(), eventDate, eventTime,eventFieldId))
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         } else {
@@ -131,7 +137,7 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         val db = Firebase.firestore
         return  db.collection("events")
             .document("stROnlu7XlPHkab1uYgC")
-            .update(mapOf<String, String>(generateRandomString() to Gson().toJson(data)))
+            .update(mapOf<String, String>(eventFieldId to Gson().toJson(data)))
             .isSuccessful
     }
 

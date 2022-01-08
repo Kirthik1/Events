@@ -24,7 +24,10 @@ data class EventData(
     val eventDate: String,
 
     @SerializedName("event_time")
-    val eventTime: String
+    val eventTime: String,
+
+    @SerializedName("event_field_id")
+    val eventFieldId: String
 
 
 ) : Parcelable

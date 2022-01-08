@@ -31,7 +31,10 @@ class CustomAdapter(private val context: Context, private val mList: List<EventD
 //            holder.imageView.setImageResource(data.image)
 
         // sets the text to the textview from our itemHolder class
-        holder.textView.text = data.name
+        holder.textView1.text = data.name
+        holder.textView2.text = data.eventDate
+        holder.textView3.text = data.eventTime
+
 
         holder.cardMain.setOnClickListener {
             val intent = Intent(context, EventDetails::class.java)
@@ -48,7 +51,9 @@ class CustomAdapter(private val context: Context, private val mList: List<EventD
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val imageView: ImageView = itemView.findViewById(R.id.item_image)
-        val textView: TextView = itemView.findViewById(R.id.item_name)
+        val textView1: TextView = itemView.findViewById(R.id.item_name)
+        val textView2: TextView = itemView.findViewById(R.id.textView2)
+        val textView3: TextView = itemView.findViewById(R.id.textView11)
         val cardMain = itemView.findViewById<CardView>(R.id.crdMain)
     }
     

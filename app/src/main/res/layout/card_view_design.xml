@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="170dp"
     android:layout_margin="10dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="6dp"
@@ -42,31 +42,40 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date :"
+                android:lineSpacingExtra="20sp"
+                android:layout_marginLeft="15dp"
+                android:textSize="20sp"/>
+
+            <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:lineSpacingExtra="20sp"
-                android:text="Description"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Date"
-                android:lineSpacingExtra="20sp"
-                android:layout_marginLeft="15dp"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                tools:text="Actual Date" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Time"
+                android:text="Time :"
                 android:lineSpacingExtra="20sp"
                 android:layout_marginLeft="15dp"
                 android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:lineSpacingExtra="20sp"
+                android:textSize="20sp"
+                tools:text="Actual Time" />
         </LinearLayout>
 
 

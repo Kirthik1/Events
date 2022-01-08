@@ -59,7 +59,7 @@ class EventDetails : AppCompatActivity() {
         val updates = hashMapOf<String, Any>(
             x to FieldValue.delete()
         )
-        //i
+        //ik
 
         docRef.update(updates).addOnCompleteListener { }
 

@@ -43,6 +43,11 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         eventVenue = findViewById(R.id.event_venue_input)
         eventCoordinators = findViewById(R.id.event_coordinator)
 
+        var eventNameTxt = eventName.text
+        var eventDescriptionTxt = eventDescription.text
+        var eventVenueTxt = eventVenue.text
+        var eventCoordinatorsTxt = eventCoordinators.text
+
 
         //initialization of date picker variable
 
@@ -61,7 +66,7 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         myDay = day
         myYear = year
-        myMonth = month
+        myMonth = month+1
         val calendar: Calendar = Calendar.getInstance()
         hour = calendar.get(Calendar.HOUR)
         minute = calendar.get(Calendar.MINUTE)
@@ -71,7 +76,7 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         myHour = hourOfDay
         myMinute = minute
-        textView.text = "Year: " + myYear + "\n" + "Month: " + myMonth + "\n" + "Day: " + myDay + "\n" + "Hour: " + myHour + "\n" + "Minute: " + myMinute
+        textView.text = "Date : " + myDay + "|" + myMonth + "|"+ myYear + "|" + "\n"+ "Hour: " + myHour + ":" + myMinute
     }
 
 

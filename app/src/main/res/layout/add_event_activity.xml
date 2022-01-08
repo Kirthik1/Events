@@ -83,21 +83,35 @@
         app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event_coordinator"
-        app:layout_constraintVertical_bias="0.093" />
+        app:layout_constraintVertical_bias="0.156" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="151dp"
-        android:layout_height="127dp"
+        android:layout_width="143dp"
+        android:layout_height="121dp"
         android:layout_below="@id/btnPick"
         android:layout_centerInParent="true"
         android:textColor="@android:color/background_dark"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPick" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPick"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date and Time"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintStart_toEndOf="@+id/btnPick"
+        app:layout_constraintTop_toBottomOf="@+id/event_coordinator"
+        app:layout_constraintVertical_bias="0.868" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

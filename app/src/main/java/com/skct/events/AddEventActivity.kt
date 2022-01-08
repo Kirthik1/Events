@@ -131,7 +131,7 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         val db = Firebase.firestore
         return  db.collection("events")
             .document("stROnlu7XlPHkab1uYgC")
-            .set(mapOf<String, String>(generateRandomString() to Gson().toJson(data)))
+            .update(mapOf<String, String>(generateRandomString() to Gson().toJson(data)))
             .isSuccessful
     }
 

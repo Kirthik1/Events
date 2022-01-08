@@ -50,7 +50,7 @@ class CustomAdapter(private val context: Context, private val mList: List<EventD
 
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.item_image)
+
         val textView1: TextView = itemView.findViewById(R.id.item_name)
         val textView2: TextView = itemView.findViewById(R.id.textView2)
         val textView3: TextView = itemView.findViewById(R.id.textView11)

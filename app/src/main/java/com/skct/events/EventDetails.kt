@@ -2,6 +2,7 @@ package com.skct.events
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import org.w3c.dom.Text
 
@@ -25,6 +26,11 @@ class EventDetails : AppCompatActivity() {
             tv4.text = eventData.eventTime
             tv5.text = eventData.coordinatorsName
             tv6.text = eventData.venueData
+
+        }
+
+        val eventcompletebutton = findViewById<Button>(R.id.completed_button)
+        eventcompletebutton.setOnClickListener(){
 
         }
     }

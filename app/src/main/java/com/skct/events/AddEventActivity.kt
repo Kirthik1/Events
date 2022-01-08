@@ -3,6 +3,7 @@ package com.skct.events
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.format.DateFormat.is24HourFormat
@@ -74,6 +75,8 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         var validateVariable = validate()
         if (validateVariable) {
             pushToFirestore(EventData(eventName.text.toString(), eventDescription.text.toString(), eventVenue.text.toString(), eventCoordinators.text.toString(), eventDate, eventTime))
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         } else {
             val message: String = "Please enter all the details"
             var toast = Toast.makeText(this, message, Toast.LENGTH_SHORT)
@@ -86,7 +89,7 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         myDay = day
         myYear = year
-        myMonth = month
+        myMonth = month+1
         val calendar: Calendar = Calendar.getInstance()
         hour = calendar.get(Calendar.HOUR)
         minute = calendar.get(Calendar.MINUTE)
@@ -108,6 +111,15 @@ class AddEventActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
 
     fun validate(): Boolean {
         if (eventName.text.toString().isEmpty()) {
+            return false
+        }
+        if (eventDescription.text.toString().isEmpty()) {
+            return false
+        }
+        if (eventVenue.text.toString().isEmpty()) {
+            return false
+        }
+        if (eventCoordinators.text.toString().isEmpty()) {
             return false
         }
         //change

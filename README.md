@@ -24,6 +24,7 @@ The App has a very simple and interactive interface which helps the students sea
 - `Recyclerview` :  To present the list of different events and notes, we used the efficient recyclerview. 
 - `LiveData & Room Database` : We are also using LiveData to create & store notes of a particular person and update it to local databases using Room.
 - `Firebase Firestore` : In addition to room database we also use firestore to store the events database online
+- `Firebase Authentication`: The App uses google sign-in as a method of authentication
 
 <b> Application Link & Future Scope : </b>
 

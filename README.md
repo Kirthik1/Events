@@ -9,7 +9,7 @@ multiple events in the same timing and finally leads to forgetting the events.
 
 <b> Screenshots : </b>
 
-<img width="200" height="433" src="./assets/images/screenshots/Event SS-1.jpg"><img width="200" height="433" src="./assets/images/screenshots/Event SS-2.jpg"><img width="200" height="433" src="./assets/images/screenshots/Event SS-3.jpg">
+<img width="200" height="433" src="./assets/images/screenshots/Event SS-1.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-2.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-3.jpg">
 <img width="200" height="433" src="./assets/images/screenshots/Event SS-4.jpg"><img width="200" height="433" src="./assets/images/screenshots/Event SS-5.jpg"><img width="200" height="433" src="./assets/images/screenshots/Event SS-6.jpg">
 <img width="200" height="433" src="./assets/images/screenshots/Event SS-7.jpg"><img width="200" height="433" src="./assets/images/screenshots/Event SS-8.jpg"><img width="200" height="433" src="./assets/images/screenshots/Event SS-9.jpg">
 <b> Proposed Solution : </b>

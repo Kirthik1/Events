@@ -9,6 +9,8 @@ multiple events in the same timing and finally leads to forgetting the events.
 
 <b> Screenshots : </b>
 
+
+
 <b> Proposed Solution : </b>
 
 This project proposes an “Event App” to keep track of all the events of our college and provides all the information about the particular Event.

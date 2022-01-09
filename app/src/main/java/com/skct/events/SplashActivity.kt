@@ -72,7 +72,7 @@ class SplashActivity : AppCompatActivity(R.layout.splash_screen) {
             if (task.isSuccessful) {
                 PreferenceUtils.setEmail(this, account.email.toString())
                 PreferenceUtils.setUsername(this, account.displayName.toString())
-                val intent = Intent(this, AddEventActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }

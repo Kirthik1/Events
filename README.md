@@ -1,5 +1,5 @@
 # Events
-A Simple App to track events in our college and take notes
+A Simple App to track events of college and take notes on them
 
 <b> Problem Statement: </b>
 

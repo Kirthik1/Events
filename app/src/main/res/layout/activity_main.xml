@@ -28,12 +28,12 @@
         android:id="@+id/notesfab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginBottom="26dp"
+        android:layout_above="@+id/fab_add"
+
+        android:layout_alignEnd="@+id/fab_add"
+android:layout_marginBottom="10.0dp"
         android:clickable="true"
-        app:srcCompat="@drawable/ic_note_symbol"
-        android:focusable="true" />
+        android:focusable="true"
+        app:srcCompat="@drawable/ic_note_symbol" />
 
 </RelativeLayout>

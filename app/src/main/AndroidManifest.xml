@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.skct.events">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,10 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Events">
-        <activity android:name=".EventDetails"/>
+        <activity android:name=".AddEditNoteActivity"></activity>
+        <activity android:name=".EventDetails" />
         <activity android:name=".AddEventActivity" />
         <activity android:name=".activity1" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".NoteMainActivity"
+            tools:ignore="MissingClass" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

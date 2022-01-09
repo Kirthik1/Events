@@ -54,5 +54,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        findViewById<FloatingActionButton>(R.id.notesfab).setOnClickListener()
+        {
+            val intent = Intent(this, NoteMainActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

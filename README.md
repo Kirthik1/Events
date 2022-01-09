@@ -22,7 +22,7 @@ The App has a very simple and interactive interface which helps the students sea
 
 - `Constraint Layout` : All of the activities in the app uses a flexible constraint layout, which is easy to handle for different screen sizes.
 - `Recyclerview` :  To present the list of different events and notes, we used the efficient recyclerview. 
-- `LiveData & Room Database` : We are also using LiveData to create & store any changes notes of a particular person and update it to local databases using Room.
+- `LiveData & Room Database` : We are also using LiveData to create & store notes of a particular person and update it to local databases using Room.
 - `Firebase Firestore` : In addition to room database we also use firestore to store the events database online
 
 <b> Application Link & Future Scope : </b>

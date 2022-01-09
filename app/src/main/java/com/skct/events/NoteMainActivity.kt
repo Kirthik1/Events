@@ -73,3 +73,4 @@ class NoteMainActivity : AppCompatActivity(), NoteClickInterface, NoteClickDelet
         Toast.makeText(this, "${note.noteTitle} Deleted", Toast.LENGTH_LONG).show()
     }
 }
+//final

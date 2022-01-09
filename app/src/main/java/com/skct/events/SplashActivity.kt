@@ -28,14 +28,14 @@ class SplashActivity : AppCompatActivity(R.layout.splash_screen) {
             val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(it.data)
             handleResult(task)
         }
-        // Configure Google Sign In inside onCreate method
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-        // getting the value of gso inside the GoogleSigninClient
+
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
-        // initialize the firebaseAuth variable
+
         firebaseAuth = FirebaseAuth.getInstance()
 
         val btnLogin: Button = findViewById(R.id.btnLogin)
@@ -53,7 +53,7 @@ class SplashActivity : AppCompatActivity(R.layout.splash_screen) {
 
 
 
-    // handleResult() function -  this is where we update the UI after Google signin takes place
+
     private fun handleResult(completedTask: Task<GoogleSignInAccount>) {
         try {
             val account: GoogleSignInAccount? = completedTask.getResult(ApiException::class.java)
@@ -65,7 +65,7 @@ class SplashActivity : AppCompatActivity(R.layout.splash_screen) {
         }
     }
 
-    // UpdateUI() function - this is where we specify what UI updation are needed after google signin has taken place.
+
     private fun updateUI(account: GoogleSignInAccount) {
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener { task ->

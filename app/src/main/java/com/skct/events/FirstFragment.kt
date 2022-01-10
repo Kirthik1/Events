@@ -1,14 +1,14 @@
 package com.skct.events
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import com.skct.events.R.id.action_firstFragment_to_secondFragment
 
 
 class FirstFragment : Fragment() {
@@ -28,12 +28,25 @@ class FirstFragment : Fragment() {
 
         val contactButton: Button = view.findViewById(R.id.contact_button)
 
+
         contactButton.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_firstFragment_to_thirdFragment)
 
         }
 
+        val homeb: Button = view.findViewById(R.id.homebutton)
+        homeb.setOnClickListener{
+            moveToNewActivity()
+
+        }
+
         return view
+    }
+
+    private fun moveToNewActivity() {
+        val i = Intent(activity, MainActivity::class.java)
+        startActivity(i)
+        (activity as Activity?)!!.overridePendingTransition(0, 0)
     }
 
 

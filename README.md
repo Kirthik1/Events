@@ -7,11 +7,6 @@ For the last two years, due to the global pandemic, most of the events in our co
 versatility of online events, the number of events has also been increased a lot and resulted in lots of unheard events, 
 multiple events in the same timing and finally leads to forgetting the events. 
 
-<b> Screenshots : </b>
-
-<img width="200" height="433" src="./assets/images/screenshots/Event SS-1.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-2.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-3.jpg">
-<img width="200" height="433" src="./assets/images/screenshots/Event SS-4.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-5.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-6.jpg">
-<img width="200" height="433" src="./assets/images/screenshots/Event SS-7.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-8.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-9.jpg">
 <b> Proposed Solution : </b>
 
 This project proposes an “Event App” to keep track of all the events of our college and provides all the information about the particular Event.
@@ -20,6 +15,14 @@ on clicking the particular event it provides the complete details of the applica
 This App also has a notes section where you can take notes of the events and can be referenced later.
 
 <b> Functionality & Concepts used : </b>
+
+<b> Screenshots : </b>
+
+<img width="200" height="433" src="./assets/images/screenshots/Event SS-1.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-2.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-3.jpg">
+<img width="200" height="433" src="./assets/images/screenshots/Event SS-4.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-5.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-6.jpg">
+<img width="200" height="433" src="./assets/images/screenshots/Event SS-7.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-8.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-9.jpg">
+<img width="200" height="433" src="./assets/images/screenshots/Event SS-10.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-11.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-12.jpg">
+
 
 The App has a very simple and interactive interface which helps the students search their desired book and preview online. Following are few android concepts used to achieve the functionalities in app :
 

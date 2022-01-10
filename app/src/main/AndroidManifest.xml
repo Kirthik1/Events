@@ -12,12 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Events">
-        <activity android:name=".AddEditNoteActivity"></activity>
+        <activity android:name=".InfoMainActivity"></activity>
+        <activity android:name=".AbtMainActivity" />
+        <activity android:name=".AddEditNoteActivity" />
         <activity android:name=".EventDetails" />
         <activity android:name=".AddEventActivity" />
         <activity android:name=".activity1" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".NoteMainActivity"
+        <activity
+            android:name=".NoteMainActivity"
             tools:ignore="MissingClass" />
         <activity android:name=".SplashActivity">
             <intent-filter>

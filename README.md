@@ -37,4 +37,4 @@ The App has a very simple and interactive interface which helps the students sea
 The app is currently in the Alpha testing phase with SKCT institute with a limited no. of users,
 You can access the app : [releases](https://github.com/Kirthik1/Events/releases/tag/v1.0)
 Once the app is fully tested and functional in SKCT institute, we plan to make a common app where different colleges will be able to access their respective college's events.
-[Download Here](release.apk)
+Direct Download - [Download Here](release.apk)

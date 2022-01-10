@@ -14,7 +14,6 @@ It also includes features like note taking . This App provides Google Sign for a
 on clicking the particular event it provides the complete details of the application along with its meeting link.
 This App also has a notes section where you can take notes of the events and can be referenced later.
 
-<b> Functionality & Concepts used : </b>
 
 <b> Screenshots : </b>
 
@@ -23,6 +22,7 @@ This App also has a notes section where you can take notes of the events and can
 <img width="200" height="433" src="./assets/images/screenshots/Event SS-7.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-8.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-9.jpg">
 <img width="200" height="433" src="./assets/images/screenshots/Event SS-10.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-11.jpg">           <img width="200" height="433" src="./assets/images/screenshots/Event SS-12.jpg">
 
+<b> Functionality & Concepts used : </b>
 
 The App has a very simple and interactive interface which helps the students search their desired book and preview online. Following are few android concepts used to achieve the functionalities in app :
 
@@ -35,5 +35,5 @@ The App has a very simple and interactive interface which helps the students sea
 <b> Application Link & Future Scope : </b>
 
 The app is currently in the Alpha testing phase with SKCT institute with a limited no. of users,
-You can access the app : [YOUR APP LINK HERE](either Github link or Google Play store link of published app or .apk file).
+You can access the app : 
 Once the app is fully tested and functional in SKCT institute, we plan to make a common app where different colleges will be able to access their respective college's events.  

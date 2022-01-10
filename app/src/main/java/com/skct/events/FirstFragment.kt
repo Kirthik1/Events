@@ -26,6 +26,13 @@ class FirstFragment : Fragment() {
             Navigation.findNavController(view).navigate(R.id.action_firstFragment_to_secondFragment)
         }
 
+        val contactButton: Button = view.findViewById(R.id.contact_button)
+
+        contactButton.setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.action_firstFragment_to_thirdFragment)
+
+        }
+
         return view
     }
 

@@ -11,23 +11,35 @@
         android:id="@+id/textVee1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1"
-        android:textSize="100sp"
+        android:text="About"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481" />
+        app:layout_constraintVertical_bias="0.174" />
 
     <Button
         android:id="@+id/fragButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="How to use"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textVee1" />
+        app:layout_constraintTop_toBottomOf="@+id/textVee1"
+        app:layout_constraintVertical_bias="0.06" />
+
+    <Button
+        android:id="@+id/contact_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragButton"
+        app:layout_constraintVertical_bias="0.075" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
